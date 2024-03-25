@@ -13,18 +13,18 @@ import (
 	"github.com/xanzy/go-gitlab"
 )
 
- func handleGitlabImport(ctx context.Context, qry *db.Queries, imp db.FetchImportJobRow) (err error) {
-    var token string
-    if _, token, err = qry.FetchCredential(ctx, imp.Provider); err != nil {
-        return err
-    }
-    var client = gitlab.NewClient(http.DefaultClient, token)
-
-    // Set custom base URL for GitLab instance
-    customBaseURL := "https://gitlab.customdomain.com" // Replace with your custom domain
-    if err := client.SetBaseURL(customBaseURL); err != nil {
-        return errors.Wrapf(err, "failed to set custom GitLab base URL")
-    }
+func handleGitlabImport(ctx context.Context, qry *db.Queries, imp db.FetchImportJobRow) (err error) {
+	var token string
+	if _, token, err = qry.FetchCredential(ctx, imp.Provider); err != nil {
+	return err
+	}
+	var client = gitlab.NewClient(http.DefaultClient, token)
+	
+	// Set custom base URL for GitLab instance
+	customBaseURL := "https://gitlab.customdomain.com" // Replace with your custom domain
+	if err := client.SetBaseURL(customBaseURL); err != nil {
+	return errors.Wrapf(err, "failed to set custom GitLab base URL")
+	}
 
 	var settings struct {
 		Type                   string      `json:"type"`
