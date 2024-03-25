@@ -7,7 +7,7 @@ export const DATE_FORMAT = {
 
 export const API = {
   GITHUB_GRAPHQL: 'https://api.github.com/graphql',
-  GITLAB_GRAPHQL: 'https://gitlab.com/api/graphql',
+  GITLAB_GRAPHQL: 'https://gitlab.customdomain.com/api/graphql',
 }
 
 export const MERGESTAT_TITLE = '- MergeStat'
@@ -194,7 +194,7 @@ export enum VENDOR_TYPE {
 
 export enum VENDOR_URL {
   BITBUCKET = 'https://bitbucket.org',
-  GITLAB = 'https://gitlab.com',
+  GITLAB = 'https://gitlab.customdomain.com',
   GITHUB = 'https://github.com'
 }
 
